@@ -1,22 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mes Jeux</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Zelda Majora's Mask</title>
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .game-page {
+      display: flex;
+      gap: 40px;
+      padding: 40px;
+      align-items: flex-start;
+    }
+
+    .game-page img {
+      width: 500px;
+      border: 4px solid #2563eb;
+    }
+
+    .review-box {
+      background: #dbeafe;
+      color: black;
+      padding: 25px;
+      border: 3px solid #2563eb;
+      flex: 1;
+    }
+
+    .review-box h2 {
+      font-size: 42px;
+      margin: 0;
+    }
+
+    .rating {
+      font-size: 30px;
+      color: hotpink;
+      margin-bottom: 30px;
+    }
+
+    .critique {
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .back {
+      display: inline-block;
+      margin: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <header>
-    <h1>Mes Jeux</h1>
-    <p>Collection personnelle</p>
-  </header>
+<a href="../index.html" class="back">← Retour</a>
 
-  <main>
-    <div id="games-list" class="games-list"></div>
-  </main>
+<div class="game-page">
 
-  <script src="script.js"></script>
+  <img src="../images/majora.jpg">
+
+  <div class="review-box">
+    <h2>Note</h2>
+
+    <div class="rating">
+      ★★★★★
+    </div>
+
+    <h2>Critique</h2>
+
+    <div class="critique">
+      Directe suite d'Ocarina Of Time...
+      L'ambiance est extrêmement mélancolique
+      et reste unique aujourd'hui.
+    </div>
+  </div>
+
+</div>
+
 </body>
 </html>
