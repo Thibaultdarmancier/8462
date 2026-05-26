@@ -6,87 +6,127 @@ body {
   font-family: Arial, sans-serif;
 }
 
-h1 {
-  margin-top: 0;
+.site-title {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #2d2d2d;
+  background: #1a1a1a;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 40px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #666;
 }
 
 .games-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 30px;
 }
 
 .game-card {
-  background: #1b1b1b;
-  border-radius: 14px;
+  background: #181818;
+  border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
-  transition: 0.2s;
-  border: 1px solid #2d2d2d;
+  transition: 0.25s;
+  border: 1px solid #2a2a2a;
+  position: relative;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  border-color: #666;
+  transform: translateY(-8px) scale(1.01);
+  border-color: #6e6e6e;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.game-card:hover::after {
+  content: "Voir la critique";
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.8);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: white;
 }
 
 .game-card img {
   width: 100%;
-  height: 320px;
+  height: 360px;
   object-fit: cover;
-}
-
-.game-title {
-  padding: 16px;
-  font-size: 20px;
-  font-weight: bold;
+  display: block;
 }
 
 .game-page {
   display: flex;
   gap: 40px;
   align-items: flex-start;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .game-cover {
   width: 500px;
-  border-radius: 14px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .game-info {
   flex: 1;
 }
 
+.game-info h1 {
+  font-size: 42px;
+  margin-top: 0;
+}
+
 .rating {
-  font-size: 32px;
+  font-size: 30px;
   margin: 20px 0;
   color: #ffd166;
 }
 
 .review {
-  background: #1b1b1b;
-  padding: 25px;
-  border-radius: 14px;
-  line-height: 1.8;
+  background: #181818;
+  padding: 30px;
+  border-radius: 18px;
+  line-height: 1.9;
   color: #d4d4d4;
+  border: 1px solid #2a2a2a;
 }
 
 .back-btn {
-  background: #1b1b1b;
+  background: #181818;
   color: white;
-  border: none;
+  border: 1px solid #2d2d2d;
   padding: 12px 18px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   margin-bottom: 20px;
+  transition: 0.2s;
 }
 
 .back-btn:hover {
-  background: #2b2b2b;
+  background: #242424;
 }
 
 @media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
   .game-page {
     flex-direction: column;
   }

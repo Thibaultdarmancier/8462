@@ -29,17 +29,20 @@ const games = [
 
 const app = document.getElementById("games-list");
 
-function renderHome() {
+function renderHome(filter = "") {
   app.innerHTML = "";
 
-  games.forEach((game) => {
+  const filteredGames = games.filter((game) =>
+    game.title.toLowerCase().includes(filter.toLowerCase())
+  );
+
+  filteredGames.forEach((game) => {
     const card = document.createElement("div");
 
     card.className = "game-card";
 
     card.innerHTML = `
       <img src="${game.image}" alt="${game.title}">
-      <div class="game-title">${game.title}</div>
     `;
 
     card.addEventListener("click", () => {
@@ -81,7 +84,7 @@ function renderGame(id) {
 
   document.querySelector(".back-btn").addEventListener("click", () => {
     history.pushState({}, "", "#");
-    renderHome();
+    location.reload();
   });
 }
 
@@ -98,3 +101,9 @@ function checkRoute() {
 window.addEventListener("popstate", checkRoute);
 
 checkRoute();
+
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", (e) => {
+  renderHome(e.target.value);
+});
